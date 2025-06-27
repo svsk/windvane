@@ -7,11 +7,8 @@ defineProps<{
 <template>
     <div class="greetings">
         <h1 class="green">{{ msg }}</h1>
-        <h3>
-            You’ve successfully created a project with
-            <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-            <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-        </h3>
+        <h3>This is project showcasing the<br />Windvane Vue UI framework.</h3>
+        <span class="opacity-50">Powered by Tailwind and inspired by Material Design.</span>
     </div>
 </template>
 

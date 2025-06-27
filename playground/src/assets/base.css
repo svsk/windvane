@@ -1,3 +1,14 @@
+@import 'tailwindcss';
+
+/* Windvane setup  */
+@source '../../node_modules/@skyloft/windvane';
+@theme {
+    --color-primary: rgb(0, 189, 126);
+    --color-card: #1a1a1a;
+    --color-bg: black;
+}
+/* Windvane setup end */
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
     --vt-c-white: #ffffff;
