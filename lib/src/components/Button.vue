@@ -11,15 +11,17 @@ interface Props {
     color?: string;
     disable?: boolean;
     label?: string;
+    type?: 'button' | 'submit' | 'reset';
 }
 
-const props = withDefaults(defineProps<Props>(), { readonly: false, iconSize: '1em' });
+const props = withDefaults(defineProps<Props>(), { readonly: false, iconSize: '1em', type: 'button' });
 </script>
 
 <template>
     <button
         v-ripple
         :disabled="readonly || disable"
+        :type="type"
         :class="{
             'relative rounded flex items-center justify-center text-center gap-2 font-medium text-sm': true,
             [color || 'text-white']: true,
