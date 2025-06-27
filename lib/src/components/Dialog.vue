@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Button from './Button.vue';
+import Form from './Form.vue';
 
 interface Props {
     modelValue: boolean;
@@ -60,37 +61,39 @@ watchEffect(() => {
                 class="flex flex-col items-center justify-center fixed w-full h-full bg-black/30 top-0 left-0 p-6 z-50"
                 @click="handleClickOutside"
             >
-                <Transition name="grow">
-                    <div
-                        v-show="showDialog"
-                        with-title-border
-                        @click.stop
-                        :class="{
-                            'w-full flex flex-col max-h-[90vh] bg-card rounded shadow-lg': true,
-                        }"
-                        :style="`max-width: ${maxWidth};`"
-                    >
-                        <h2
-                            v-if="$slots.title || title"
-                            class="font-medium text-lg shrink-0 p-6 pb-4 border-b border-b-gray-500"
+                <Form @submit="emit('confirm')" :class="`w-full`" :style="`max-width: ${maxWidth}`">
+                    <Transition name="grow">
+                        <div
+                            v-show="showDialog"
+                            with-title-border
+                            @click.stop
+                            :class="{
+                                'w-full flex flex-col max-h-[90vh] bg-card rounded shadow-lg': true,
+                            }"
+                            :style="`max-width: ${maxWidth};`"
                         >
-                            <slot name="title">
-                                {{ title }}
-                            </slot>
-                        </h2>
+                            <h2
+                                v-if="$slots.title || title"
+                                class="font-medium text-lg shrink-0 p-6 pb-4 border-b border-b-gray-500"
+                            >
+                                <slot name="title">
+                                    {{ title }}
+                                </slot>
+                            </h2>
 
-                        <div :class="{ 'overflow-y-auto grow': true, 'p-6': !unpadded }">
-                            <slot />
-                        </div>
+                            <div :class="{ 'overflow-y-auto grow': true, 'p-6': !unpadded }">
+                                <slot />
+                            </div>
 
-                        <div v-if="withConfirm" class="w-full flex justify-end pt-6 p-6 gap-2 shrink-0">
-                            <Button :readonly="disableCancel" flat @click="emit('cancel')"> Cancel </Button>
-                            <Button :readonly="disableConfirm" :color="confirmColor" @click="emit('confirm')">
-                                {{ confirmText || 'Confirm' }}
-                            </Button>
+                            <div v-if="withConfirm" class="w-full flex justify-end pt-6 p-6 gap-2 shrink-0">
+                                <Button :readonly="disableCancel" flat @click="emit('cancel')"> Cancel </Button>
+                                <Button :readonly="disableConfirm" :color="confirmColor" type="submit">
+                                    {{ confirmText || 'Confirm' }}
+                                </Button>
+                            </div>
                         </div>
-                    </div>
-                </Transition>
+                    </Transition>
+                </Form>
             </div>
         </Transition>
     </Teleport>

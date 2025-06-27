@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import WelcomeItem from './WelcomeItem.vue';
 
-const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
+const showDialog = ref(false);
 </script>
 
 <template>
@@ -48,6 +49,34 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
                     <Button icon="home">With an Icon</Button>
                     <Button round icon="home"></Button>
                     <Button flat>Flat</Button>
+                </div>
+            </WelcomeItem>
+
+            <WelcomeItem>
+                <template #icon>
+                    <Icon size="28px" name="dialogs" />
+                </template>
+
+                <template #heading>Dialogs</template>
+
+                <div class="flex items-center gap-3">
+                    <Button @click="showDialog = true">Click Me</Button>
+
+                    <Dialog
+                        v-model="showDialog"
+                        with-confirm
+                        @confirm="showDialog = false"
+                        @cancel="showDialog = false"
+                    >
+                        <template #title> Cool Title! </template>
+
+                        <div class="pb-2">You must type something!</div>
+
+                        <Input
+                            :rules="[(val: any) => !!val || 'I will validate on confirm!']"
+                            label="Type something!"
+                        />
+                    </Dialog>
                 </div>
             </WelcomeItem>
 
