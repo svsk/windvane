@@ -1,0 +1,10 @@
+{
+    "name": "windvane-monorepo",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm --filter playground dev",
+        "build:lib": "pnpm --filter @skyloft/windvane build",
+        "build:lib:watch": "pnpm --filter @skyloft/windvane build --watch"
+    },
+    "devDependencies": {}
+}

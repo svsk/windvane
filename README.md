@@ -85,3 +85,23 @@ const selectedTab = ref('general');
     </div>
 </template>
 ```
+
+## Development
+
+At the root of the repo run
+
+```
+pnpm install
+```
+
+open two CLIs and simultaneously run
+
+```
+pnpm build:lib:watch
+```
+
+and
+
+```
+pnpm dev
+```
