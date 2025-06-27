@@ -22,7 +22,8 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/windvane.es.js",
             "require": "./dist/windvane.umd.js"
-        }
+        },
+        "./windvane.css": "./dist/windvane.css"
     },
     "scripts": {
         "dev": "vite",
