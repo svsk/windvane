@@ -1,0 +1,20 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "./auto-imports.d.ts"],
+    "exclude": ["src/**/__tests__/*"],
+    "compilerOptions": {
+        // --- ESSENTIAL FOR LIBRARY BUILDS ---
+        "composite": true,
+        "declaration": true,
+        "declarationDir": "./dist",
+        "rootDir": "./src",
+        "emitDeclarationOnly": true,
+        "noEmit": false,
+
+        // --- Standard Options ---
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    }
+}
