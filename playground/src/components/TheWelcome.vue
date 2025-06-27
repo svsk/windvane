@@ -10,49 +10,67 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 </script>
 
 <template>
-    <WelcomeItem>
-        <template #icon>
-            <DocumentationIcon />
-        </template>
-        <template #heading>Documentation</template>
+    <Card with-title-border>
+        <template #title> <h2 class="text-2xl">Features</h2> </template>
 
-        Windvane's documentation is available online at https://github.com/svsk/windvane
-    </WelcomeItem>
+        <div class="px-6">
+            <WelcomeItem>
+                <template #icon>
+                    <DocumentationIcon />
+                </template>
+                <template #heading>Documentation</template>
 
-    <WelcomeItem>
-        <template #icon>
-            <ToolingIcon />
-        </template>
-        <template #heading>Theming</template>
+                Windvane's documentation is available online at https://github.com/svsk/windvane
+            </WelcomeItem>
 
-        You can customize the look and feel of your application by creating a @theme.
-    </WelcomeItem>
+            <WelcomeItem>
+                <template #icon>
+                    <ToolingIcon />
+                </template>
+                <template #heading>Theming</template>
 
-    <WelcomeItem>
-        <template #icon>
-            <EcosystemIcon />
-        </template>
-        <template #heading>Inputs</template>
+                You can customize the look and feel of your application by creating a @theme.
+            </WelcomeItem>
 
-        <Input label="You can type here!" />
-    </WelcomeItem>
+            <WelcomeItem>
+                <template #icon>
+                    <EcosystemIcon />
+                </template>
+                <template #heading>Inputs</template>
 
-    <WelcomeItem>
-        <template #icon>
-            <CommunityIcon />
-        </template>
+                <Input label="You can type here!" />
+            </WelcomeItem>
 
-        <template #heading>Buttons</template>
+            <WelcomeItem>
+                <template #icon>
+                    <CommunityIcon />
+                </template>
 
-        <Button>Basic</Button>
-    </WelcomeItem>
+                <template #heading>Buttons</template>
 
-    <WelcomeItem>
-        <template #icon>
-            <SupportIcon />
-        </template>
-        <template #heading>Selects</template>
+                <div class="flex items-center gap-3">
+                    <Button>Basic</Button>
+                    <Button icon="home">With an Icon</Button>
+                    <Button round icon="home"></Button>
+                    <Button flat>Flat</Button>
+                </div>
+            </WelcomeItem>
 
-        <Select />
-    </WelcomeItem>
+            <WelcomeItem>
+                <template #icon>
+                    <SupportIcon />
+                </template>
+                <template #heading>Selects</template>
+
+                <Select
+                    label="Pick one!"
+                    :options="[
+                        { label: 'Option 1', value: 'option-1' },
+                        { label: 'Option 2', value: 'option-2' },
+                        { label: 'Option 3', value: 'option-3' },
+                    ]"
+                />
+            </WelcomeItem>
+        </div>
+    </Card>
 </template>
