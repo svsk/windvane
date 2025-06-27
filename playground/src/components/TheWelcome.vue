@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import WelcomeItem from './WelcomeItem.vue';
-import DocumentationIcon from './icons/IconDocumentation.vue';
-import ToolingIcon from './icons/IconTooling.vue';
-import EcosystemIcon from './icons/IconEcosystem.vue';
-import CommunityIcon from './icons/IconCommunity.vue';
-import SupportIcon from './icons/IconSupport.vue';
 
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 </script>
@@ -16,7 +11,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
         <div class="px-6">
             <WelcomeItem>
                 <template #icon>
-                    <DocumentationIcon />
+                    <Icon size="28px" name="book_ribbon" />
                 </template>
                 <template #heading>Documentation</template>
 
@@ -25,7 +20,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 
             <WelcomeItem>
                 <template #icon>
-                    <ToolingIcon />
+                    <Icon size="28px" name="routine" />
                 </template>
                 <template #heading>Theming</template>
 
@@ -34,7 +29,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 
             <WelcomeItem>
                 <template #icon>
-                    <EcosystemIcon />
+                    <Icon size="28px" name="text_select_end" />
                 </template>
                 <template #heading>Inputs</template>
 
@@ -43,7 +38,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 
             <WelcomeItem>
                 <template #icon>
-                    <CommunityIcon />
+                    <Icon size="28px" name="left_click" />
                 </template>
 
                 <template #heading>Buttons</template>
@@ -58,7 +53,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md');
 
             <WelcomeItem>
                 <template #icon>
-                    <SupportIcon />
+                    <Icon size="28px" name="filter_list" />
                 </template>
                 <template #heading>Selects</template>
 
