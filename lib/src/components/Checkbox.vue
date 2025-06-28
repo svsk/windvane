@@ -65,11 +65,7 @@ watch(
                 v-if="value"
                 style="transform: scale(80%)"
             />
-            <Icon
-                :font-size="size || '1em'"
-                name="check_box_outline_blank"
-                :class-name="value ? `text-green-600` : ''"
-            />
+            <Icon :font-size="size || '1em'" name="check_box_outline_blank" :class-name="value ? `text-primary` : ''" />
         </div>
 
         <slot>
