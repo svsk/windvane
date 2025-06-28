@@ -63,6 +63,19 @@ body {
 
 ```
 
+If you want code completion and syntax highlighting in VSCode you should add this to your tsconfig's compilerOptions:
+
+```JSON
+// tsconfig.json (or tsconfig.app.json)
+
+{
+    // <Other settings omitted for brevity>
+    "compilerOptions": {
+        "types": ["@skyloft/windvane/global"],
+    }
+}
+```
+
 Then you're ready to go!
 
 ```vue

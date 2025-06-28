@@ -7,7 +7,11 @@ const showDialog = ref(false);
 
 <template>
     <Card with-title-border>
-        <template #title> <h2 class="text-2xl">Features</h2> </template>
+        <template #title>
+            <div>
+                <h2 class="text-2xl">Features</h2>
+            </div>
+        </template>
 
         <div class="px-6">
             <WelcomeItem>
