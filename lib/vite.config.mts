@@ -30,13 +30,13 @@ export default defineConfig({
             // Generate a tsconfig file to ensure TypeScript type safety
             dts: './auto-imports.d.ts',
         }),
-        // Copy the README.md file to the dist folder, so that it shows up on npmjs.org
+        // Copy the README.md file down to the lib folder, so that it shows up on npmjs.org
         viteStaticCopy({
             targets: [
                 {
                     // The 'src' path is relative to the package root (the 'lib' folder)
                     src: '../README.md', // Go up one level to the monorepo root
-                    dest: '.', // The 'dest' path is relative to the 'dist' folder
+                    dest: '..', // The 'dest' path is relative to the 'dist' folder
                 },
             ],
         }),
