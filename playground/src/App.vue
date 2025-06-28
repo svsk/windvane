@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
+import Logo from './components/Logo.vue';
 </script>
 
 <template>
     <header>
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+        <Logo class="logo" style="height: 125px; width: 125px" />
 
         <div class="wrapper">
             <HelloWorld msg="Windvane" />
