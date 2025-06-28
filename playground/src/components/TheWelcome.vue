@@ -7,10 +7,12 @@ const showDialog = ref(false);
 const selectedOption = ref('option-1');
 const selectedTab = ref('components');
 const checked = ref(false);
+
+const colorInput = ref<HTMLInputElement | null>(null);
 </script>
 
 <template>
-    <Card with-title-border title-style="padding-bottom: 0px;" style="width: 610px; min-height: 670px; max-width: 90vw">
+    <Card with-title-border title-style="padding-bottom: 0px;" style="width: 610px; min-height: 820px; max-width: 90vw">
         <template #title>
             <div class="flex items-center justify-between w-full flex-wrap">
                 <h2 class="text-2xl pb-4">Features</h2>
@@ -129,9 +131,14 @@ const checked = ref(false);
                 </template>
                 <template #heading>Theming</template>
 
-                You can customize the look and feel of your application by creating a @theme.
+                <div class="flex gap-3 items-center">
+                    <div class="flex">
+                        <Button round @click="() => colorInput?.click()" icon="colorize" icon-size="24px" />
+                        <input ref="colorInput" type="color" v-model="themeColor" class="invisible h-1 w-1" />
+                    </div>
 
-                <input type="color" v-model="themeColor" />
+                    You can customize the look and feel of your application by creating a @theme.
+                </div>
             </WelcomeItem>
         </div>
     </Card>
