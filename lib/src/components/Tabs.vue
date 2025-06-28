@@ -41,7 +41,7 @@ watch(
 </script>
 
 <template>
-    <div class="flex no-wrap w-full">
+    <div class="flex no-wrap">
         <slot />
     </div>
 </template>
