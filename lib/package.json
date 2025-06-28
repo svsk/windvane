@@ -23,12 +23,21 @@
             "import": "./dist/windvane.es.js",
             "require": "./dist/windvane.umd.js"
         },
-        "./windvane.css": "./dist/windvane.css"
+        "./windvane.css": "./dist/windvane.css",
+        "./global": {
+            "types": "./dist/global.d.ts"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "global": [
+                "./dist/global.d.ts"
+            ]
+        }
     },
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "buildOld": "vite build && vue-tsc -p tsconfig.app.json --emitDeclarationOnly",
         "preview": "vite preview",
         "test:unit": "vitest",
         "lint": "eslint . --fix",
