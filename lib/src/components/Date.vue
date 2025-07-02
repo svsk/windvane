@@ -125,6 +125,7 @@ const handleDateClicked = (unixDate: number) => {
                 v-ripple
                 :key="date.unixDate"
                 :disable="readonly"
+                type="button"
                 :class="{
                     'text-center rounded py-2 relative': true,
                     'cursor-pointer': !readonly,
