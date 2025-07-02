@@ -4,14 +4,23 @@
 @source '../../node_modules/@skyloft/windvane';
 @theme {
     --color-primary: var(--primary);
-    --color-card: rgb(40, 40, 40);
-    --color-bg: black;
+    --color-card: var(--bg-card);
+    --color-bg: var(--bg-main);
+    --color-buttons: var(--bg-main);
+    --color-text: var(--text-main);
+    --color-border: var(--border-main);
 }
 /* Windvane setup end */
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-    --primary: #00a43e;
+    --primary: #00b445;
+    --bg-main: #1b1b1b;
+    --bg-card: #333333;
+    --text-main: #ffffff;
+    --border-main: #646e7d;
+
+    color: var(--text-main);
 
     --vt-c-white: #ffffff;
     --vt-c-white-soft: #f8f8f8;
@@ -44,7 +53,6 @@
     --color-border-hover: var(--vt-c-divider-light-1);
 
     --color-heading: var(--vt-c-text-light-1);
-    --color-text: var(--vt-c-text-light-1);
 
     --section-gap: 160px;
 }
@@ -59,7 +67,6 @@
         --color-border-hover: var(--vt-c-divider-dark-1);
 
         --color-heading: var(--vt-c-text-dark-1);
-        --color-text: var(--vt-c-text-dark-2);
     }
 }
 
@@ -73,8 +80,7 @@
 
 body {
     min-height: 100vh;
-    color: var(--color-text);
-    background: var(--color-background);
+    background: var(--bg-main);
     transition:
         color 0.5s,
         background-color 0.5s;

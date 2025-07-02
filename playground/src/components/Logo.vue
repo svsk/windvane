@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { themeColor } from '@/composables/useThemeColor';
+import { theme } from '@/composables/useThemeColor';
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import { themeColor } from '@/composables/useThemeColor';
                     stroke-dashoffset: 0;
                     stroke-linejoin: miter;
                     stroke-miterlimit: 4;
-                    fill: ${themeColor};
+                    fill: ${theme.primary};
                     fill-rule: nonzero;
                     opacity: 1;
                 `"
@@ -41,7 +41,7 @@ import { themeColor } from '@/composables/useThemeColor';
                     stroke-dashoffset: 0;
                     stroke-linejoin: miter;
                     stroke-miterlimit: 4;
-                    fill: ${themeColor};
+                    fill: ${theme.primary};
                     fill-rule: nonzero;
                     opacity: 0.5;
                 `"
