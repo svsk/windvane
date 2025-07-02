@@ -24,9 +24,11 @@ const props = withDefaults(defineProps<Props>(), { readonly: false, iconSize: '1
         :type="type"
         :class="{
             'relative rounded flex items-center justify-center text-center gap-2 font-medium text-sm': true,
-            [color || 'text-white']: true,
-            'bg-primary': !flat,
-            'bg-transparent': flat,
+            color: true,
+            'bg-primary text-buttons': !flat,
+            'bg-transparent text-text': flat,
+            'hover:bg-white/10': flat,
+            'transition-colors': true,
             'opacity-70 cursor-not-allowed': readonly || disable,
             'cursor-pointer': !readonly && !disable,
             'rounded-full aspect-square p-2': round,
