@@ -37,7 +37,7 @@ let to: number | undefined = undefined;
 
 const classes = computed(() => ({
     [props.inputClass || '']: true,
-    'border-b-2 bg-black/20 rounded-t p-2 pt-4 outline-none w-full h-full text-base': true,
+    'border-b-2 bg-bg rounded-t p-2 pt-4 outline-none w-full h-full text-base': true,
     'read-only:border-gray-400 read-only:border-dashed read-only:border-b': true,
     'border-gray-700': !errorMessage.value,
     'border-red-500': !!errorMessage.value,
