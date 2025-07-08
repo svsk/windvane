@@ -96,6 +96,7 @@ const handleNewInputValue = (newValue: string | number | null | undefined) => {
     <div class="container flex items-center">
         <div v-if="!disallowDecimals" class="flex flex-col h-full">
             <Button
+                :readonly="readonly"
                 flat
                 icon="expand_less"
                 icon-size="24px"
@@ -104,6 +105,7 @@ const handleNewInputValue = (newValue: string | number | null | undefined) => {
                 @click="onIncrement"
             />
             <Button
+                :readonly="readonly"
                 flat
                 icon="expand_more"
                 icon-size="24px"
@@ -134,20 +136,22 @@ const handleNewInputValue = (newValue: string | number | null | undefined) => {
         </div>
         <div class="flex flex-col h-full">
             <Button
+                :readonly="readonly"
                 flat
                 icon="expand_less"
                 icon-size="24px"
                 class="buttons border border-slate-600 right top"
                 style="flex-grow: 1"
-                @click="(_) => (disallowDecimals ? onIncrement() : onIncrementDecimal())"
+                @click="() => (disallowDecimals ? onIncrement() : onIncrementDecimal())"
             />
             <Button
+                :readonly="readonly"
                 flat
                 icon="expand_more"
                 icon-size="24px"
                 class="buttons border border-slate-600 right bottom"
                 style="flex-grow: 1"
-                @click="(_) => (disallowDecimals ? onDecrement() : onDecrementDecimal())"
+                @click="() => (disallowDecimals ? onDecrement() : onDecrementDecimal())"
             />
         </div>
     </div>
